@@ -21,8 +21,8 @@ def create_video(image_path, audio_path, output_path, fps=24):
     video_clip.write_videofile(output_path, codec='libx264', audio_codec='aac', fps=fps)
 
 # Paths to the image, audio, and output video file
-image_path = "Mr. Fluffles Fury.png"
-audio_path = "Mr. Fluffles Fury.mp3"
+image_path = "images/Mr. Fluffles Fury.png"
+audio_path = "mp3/Mr. Fluffles Fury.mp3"
 output_path = "Mr. Fluffles Fury.mp4"
 
 # Create the video
