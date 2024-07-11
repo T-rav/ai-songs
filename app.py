@@ -11,9 +11,9 @@ def create_video(image_path, audio_path, output_path, fps=24):
     video_clip.write_videofile(output_path, codec='libx264', audio_codec='aac', fps=fps)
 
 # Paths to the image, audio, and output video file
-image_path = "images/Code and Rhythm.png"
-audio_path = "mp3/Code and Rhythm.mp3"
-output_path = "Code and Rhythm.mp4"
+image_path = "images/Throat Shredder.png"
+audio_path = "mp3/Throat Shredder.mp3"
+output_path = "Throat Shredder.mp4"
 
 # Create the video
 create_video(image_path, audio_path, output_path)
