@@ -9,8 +9,9 @@ def create_video_with_multiple_audios(image_path, audio_paths, output_path, fps=
     audio_clips = [AudioFileClip(audio) for audio in audio_paths]
     
     # Apply fade out to the last audio clip
-    audio_clips[-1] = audio_clips[-1].fx(afx.audio_fadeout, fade_duration)
-    
+    if fade_duration > 0:
+        audio_clips[-1] = audio_clips[-1].fx(afx.audio_fadeout, fade_duration)
+        
     combined_audio = concatenate_audioclips(audio_clips)
     
     image_clip = image_clip.set_duration(combined_audio.duration)
@@ -19,9 +20,9 @@ def create_video_with_multiple_audios(image_path, audio_paths, output_path, fps=
     video_clip.write_videofile(output_path, codec='libx264', audio_codec='aac', fps=fps)
 
 # Paths to the image, multiple audios, and output video file
-image_path = "images/Feline Famine.webp"
+image_path = "images/tiny terror/Feline Famine.webp"
 audio_paths = ["mp3/Feline Famine - Pt1.m4a", "mp3/Feline Famine - Pt2.m4a"]
 output_path = "Mr Fluffles' Feline Famine.mp4"
 
 # Create the video
-create_video_with_multiple_audios(image_path, audio_paths, output_path, 0)
+create_video_with_multiple_audios(image_path, audio_paths, output_path, 0.1)
