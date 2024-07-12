@@ -11,9 +11,9 @@ def create_video(image_path, audio_path, output_path, fps=24):
     video_clip.write_videofile(output_path, codec='libx264', audio_codec='aac', fps=fps)
 
 # Paths to the image, audio, and output video file
-image_path = "images/Countertop Carnage.webp"
-audio_path = "mp3/Countertop Carnage.mp3"
-output_path = "Mr Fluffles' Countertop Carnage.mp4"
+image_path = "images/Claw of Doom.webp"
+audio_path = "mp3/Claw of Doom.m4a"
+output_path = "Mr Fluffles' Claw of Doom.mp4"
 
 # Create the video
 create_video(image_path, audio_path, output_path)
