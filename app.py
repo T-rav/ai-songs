@@ -1,12 +1,16 @@
 from moviepy.editor import *
 
 # Function to create a video from an image and multiple audio files
-def create_video_with_multiple_audios(image_path, audio_paths, output_path, fps=24):
+def create_video_with_multiple_audios(image_path, audio_paths, output_path, fps=24, fade_duration=2.5):
     
     image_clip = ImageClip(image_path)
     
     # Combine audio clips
     audio_clips = [AudioFileClip(audio) for audio in audio_paths]
+    
+    # Apply fade out to the last audio clip
+    audio_clips[-1] = audio_clips[-1].fx(afx.audio_fadeout, fade_duration)
+    
     combined_audio = concatenate_audioclips(audio_clips)
     
     image_clip = image_clip.set_duration(combined_audio.duration)
@@ -20,4 +24,4 @@ audio_paths = ["mp3/Feline Famine - Pt1.m4a", "mp3/Feline Famine - Pt2.m4a"]
 output_path = "Mr Fluffles' Feline Famine.mp4"
 
 # Create the video
-create_video_with_multiple_audios(image_path, audio_paths, output_path)
+create_video_with_multiple_audios(image_path, audio_paths, output_path, 0)
