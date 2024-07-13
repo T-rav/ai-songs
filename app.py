@@ -20,9 +20,9 @@ def create_video_with_multiple_audios(image_path, audio_paths, output_path, fps=
     video_clip.write_videofile(output_path, codec='libx264', audio_codec='aac', fps=fps)
 
 # Paths to the image, multiple audios, and output video file
-image_path = "images/tiny terror/Shadow Stalker.webp"
-audio_paths = ["mp3/Shadow Stalker.m4a"]
-output_path = "Shadow Stalker.mp4"
+image_path = "images/Oatmeal Salad.webp"
+audio_paths = ["mp3/Oatmeal Salad.m4a"]
+output_path = "Oatmeal Salad.mp4"
 
 # Create the video
 create_video_with_multiple_audios(image_path, audio_paths, output_path, 0.1)
