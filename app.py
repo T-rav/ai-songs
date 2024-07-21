@@ -20,9 +20,9 @@ def create_video_with_multiple_audios(image_path, audio_paths, output_path, fps=
     video_clip.write_videofile(output_path, codec='libx264', audio_codec='aac', fps=fps)
 
 # Paths to the image, multiple audios, and output video file
-image_path = "images/tiny terror/Sovereign Slumber.webp"
-audio_paths = ["mp3/Sovereign Slumber.m4a"]
-output_path = "Mr Fluffles' Sovereign Slumber.mp4"
+image_path = "images/tiny terror/Winged Menace.webp"
+audio_paths = ["mp3/Winged Menace.m4a"]
+output_path = "Mr Fluffles' Winged Menace.mp4"
 
 # Create the video
 create_video_with_multiple_audios(image_path, audio_paths, output_path, 0.1)
